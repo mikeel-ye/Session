@@ -39,9 +39,7 @@ async def main(_, msg):
 
 async def generate_session(bot, msg, telethon=False):
     await msg.reply(
-        "sᴛᴀʀᴛɪɴʜ {} sᴇssɪᴏɴ ɢᴇɴᴇʀᴀᴛɪᴏɴ...".format(
-            "Telethon" if telethon else "Pyrogram"
-        )
+        f'sᴛᴀʀᴛɪɴʜ {"Telethon" if telethon else "Pyrogram"} sᴇssɪᴏɴ ɢᴇɴᴇʀᴀᴛɪᴏɴ...'
     )
     user_id = msg.chat.id
     api_id_msg = await bot.ask(
@@ -161,18 +159,14 @@ async def generate_session(bot, msg, telethon=False):
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = "**{} sᴛʀɪɴɢ sᴇssɪᴏɴ** \n\n`{}` \n\ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @Alexa_Help".format(
-        "ᴛᴇʟᴇᴛʜᴏɴ" if telethon else "ᴘʏʀᴏɢʀᴀᴍ", string_session
-    )
+    text = f'**{"ᴛᴇʟᴇᴛʜᴏɴ" if telethon else "ᴘʏʀᴏɢʀᴀᴍ"} sᴛʀɪɴɢ sᴇssɪᴏɴ** \n\n`{string_session}` \n\ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ @Alexa_Help'
     try:
         await client.send_message("me", text)
     except KeyError:
         pass
     await client.disconnect()
     await phone_code_msg.reply(
-        "sᴜᴄᴄᴇssꜰᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ {} sᴛʀɪɴɢ sᴇssɪᴏɴ. \n\nᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs! \n\nʙʏ @TheTeamAlexa".format(
-            "telethon" if telethon else "pyrogram"
-        )
+        f'sᴜᴄᴄᴇssꜰᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ {"telethon" if telethon else "pyrogram"} sᴛʀɪɴɢ sᴇssɪᴏɴ. \n\nᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs! \n\nʙʏ @TheTeamAlexa'
     )
 
 
