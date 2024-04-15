@@ -8,6 +8,23 @@
     "python",
     "pyrogram"
   ],
+  "buildpacks": [{
+    "url": "heroku/python"
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "addons": [
+      {
+         "options": {
+            "version": "12"
+         },
+         "plan": "heroku-postgresql"
+      }
+   ],
   "repository": "https://github.com/jankarikiduniya/Session_Robot",
   "env": {
     "ENVIRONMENT": {
@@ -37,22 +54,3 @@
     }
   }
 }
-  "addons": [
-    {
-      "plan": "heroku-postgresql"
-    }
-  ],
-  "buildpacks": [
-    {
-      "url": "heroku/python"
-    },
-    {
-      "url": "https://github.com/interconnectit/heroku-buildpack-ffmpeg"
-    }
-  ],
-  "formation": {
-    "worker": {
-      "quantity": 1,
-      "size": "basic"
-    }
-  }
