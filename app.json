@@ -8,7 +8,7 @@
     "python",
     "pyrogram"
   ],
-  "buildpacks": [{
+    "buildpacks": [{
     "url": "heroku/python"
   }],
   "formation": {
