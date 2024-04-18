@@ -8,24 +8,16 @@
     "python",
     "pyrogram"
   ],
-    "buildpacks": [{
-    "url": "heroku/python"
-  }],
-  "formation": {
-    "worker": {
-      "quantity": 1,
-      "size": "eco"
+ "repository": "https://github.com/mikeel-ye/Session",
+ "stack": "heroku-22",
+ "addons": [
+    {
+       "options": {
+          "version": "15"
+       },
+       "plan": "heroku-postgresql"
     }
-  },
-  "addons": [
-      {
-         "options": {
-            "version": "12"
-         },
-         "plan": "heroku-postgresql"
-      }
-   ],
-  "repository": "https://github.com/jankarikiduniya/Session_Robot",
+ ],
   "env": {
     "ENVIRONMENT": {
       "description": "Don't change ANYTHING.",
